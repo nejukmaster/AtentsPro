@@ -1,0 +1,51 @@
+/* LoginSceneStyle.uss */
+
+.login-field > .unity-text-field__label{
+    color: #FFFFFF;
+}
+
+.login-field > .unity-text-field__input{
+    color: #000000;
+}
+
+/* === 실제 팝업 컨테이너 스타일 (수정됨) === 
+   vh 대신 %를 사용하고, translate 대신 top 속성으로 애니메이션을 제어합니다.
+*/
+.popup-container {
+    position: absolute;
+    width: 400px;
+    padding: 30px;
+    background-color: rgb(40, 40, 80);
+    border-radius: 15px;
+    
+    /* 화면 정중앙에 배치하기 위한 설정 */
+    left: 50%;
+    /* translate를 사용해 자기 자신의 크기 절반만큼 이동하여 완벽한 중앙 정렬 */
+    translate: -50% 0;
+    
+    /* 내부 요소 정렬 */
+    align-items: center;
+
+    /* 트랜지션 효과: top과 opacity 속성이 변할 때 애니메이션 적용 (translate -> top 으로 변경) */
+    transition-property: top, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+/* === 팝업이 숨겨져 있을 때의 스타일 (수정됨) ===
+*/
+.popup-hidden {
+    /* top 위치를 화면 밖(110%)으로 설정하여 아래로 숨김 */
+    top: 110%; 
+    opacity: 0;
+    visibility: hidden; 
+}
+
+/* === 팝업이 보일 때의 스타일 (수정됨) ===
+*/
+.popup-visible {
+    /* top 위치를 화면의 50% 지점으로 설정하여 중앙으로 이동 */
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
+}

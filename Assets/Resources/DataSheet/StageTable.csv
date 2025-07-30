@@ -1,0 +1,3 @@
+stage_id,stage_name,stage_description,stage_enemies
+DummyStage,더미 스테이지,더미 스테이지 입니다.,DummyEnemy
+Stage1,시골 오솔길-1,"한적한 시골마을, 정체불명의 괴한들이 쳐들어왔습니다. 이들을 무찌르고 평화를 되찾아주세요.",DummyEnemy

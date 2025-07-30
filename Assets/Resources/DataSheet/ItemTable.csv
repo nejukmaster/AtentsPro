@@ -1,0 +1,3 @@
+item_id,item_name,item_description,can_use
+apple,사과,먹음직스러운 사과이다.,FALSE
+gold_bundle,골드 꾸러미,골드가 든 주머니. 사용하면 소량의 골드를 얻을 수 있다.,TRUE

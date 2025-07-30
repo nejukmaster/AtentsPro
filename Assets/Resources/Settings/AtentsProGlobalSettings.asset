@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79bbf1fd16332c41a5e0a538ab19c48, type: 3}
+  m_Name: AtentsProGlobalSettings
+  m_EditorClassIdentifier: 
+  characterAssetPath: Assets/Character/
+  modelFBXsPath: Models/
+  prefabsPath: Prefabs/
+  uiTexturePath: Texture/UI/
+  itemIconPath: Texture/ItemIcon/
+  skillIconPath: Texture/SkillIcon/
+  profileImagePath: Texture/ProfileImage/
+  characterPortraitPath: Texture/Illustration/CharacterPortrait/
+  characterFullbodyPath: Texture/Illustration/CharacterFullbody/
+  buffIconPath: Texture/BuffIcon/
+  eventBannerPath: Texture/EventBanner/
+  dataSheetPath: DataSheet/
+  scenesPath: Scenes/

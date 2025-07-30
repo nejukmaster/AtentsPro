@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UIToolkit/LoginScene/LoginSceneStyle.uss?fileID=7433441132597879392&amp;guid=4c389c683a767d54dbcd3c0559630cf9&amp;type=3#LoginSceneStyle" />
+    <ui:VisualElement name="root" style="flex-direction: column; align-items: center; justify-content: center; padding: 20px; height: 100%; background-image: resource(&apos;Texture/Illustration/Background/loginBackground&apos;); width: 100%;">
+        <ui:VisualElement name="loginContainer" style="flex-direction: column; align-items: center; padding: 20px; background-color: rgba(88, 85, 255, 0.62); border-radius: 8px; width: auto; -unity-background-image-tint-color: rgb(107, 123, 255);">
+            <ui:Image name="loginImage" sprite="login_button" scale-mode="ScaleToFit" style="width: 300px; margin-bottom: 20px; background-image: resource(&apos;Texture/UI/gameTitle&apos;); height: 250px;" />
+            <ui:TextField name="usernameField" label="아이디" class="login-field" style="width: 100%; margin-bottom: 10px; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+            <ui:TextField name="passwordField" label="비밀번호" password="true" class="login-field" style="width: 100%; margin-bottom: 20px; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+            <ui:Button name="loginButton" text="로그인" style="width: 100%; unity-font-style: bold; border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; background-color: rgb(243, 243, 243);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="popupContainer" class="popup-container popup-hidden" style="display: flex; visibility: visible;">
+            <ui:Label text="로그인 실패" style="font-size: 24px; -unity-font-style: bold; color: white; margin-bottom: 20px;" />
+            <ui:Label text="아이디나 비밀번호가 맞지 않습니다." style="font-size: 16px; color: white; margin-bottom: 30px;" />
+            <ui:Button name="closeButton" text="닫기" style="width: 150px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
