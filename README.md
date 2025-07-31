@@ -28,4 +28,5 @@
 
 캐릭터
 --------------------
-캐릭터는 **스테이지**에 등장하여 전투를 하는 아군/적군을 총칭합니다. 기본적으로
+캐릭터는 **스테이지**에 등장하여 전투를 하는 아군/적군을 총칭합니다. [Character 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/Character.cs)를 통해 구현합니다.
+
