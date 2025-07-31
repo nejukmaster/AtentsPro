@@ -1,6 +1,7 @@
 개요
 ----------------------
-**블루 아카이브**나 **붕괴:스타레일**과 같은 턴제 전투 방식을 차용한 3D 수집형 RPG 포트폴리오입니다.
+**블루 아카이브**나 **붕괴:스타레일**과 같은 턴제 전투 방식을 차용한 3D 수집형 RPG 포트폴리오입니다.<br>
+https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=sharing
 
 기능
 ---------------------
@@ -41,3 +42,6 @@
 > cooltime: 이 Skill의 쿨타임<br>
 > Cast: 이 Skill이 사용되었을 때, 호출될 메서드<br>
 > GetTargetables: 이 Skill을 사용가능한 대상을 반환하는 메서드<br>
+
+Character의 스킬은 다음과 같은 매커니즘으로 실행됩니다.
+  
