@@ -46,4 +46,4 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 > GetTargetables: 이 Skill을 사용가능한 대상을 반환하는 메서드<br>
 
 Character의 스킬은 기본적으로 다음과 같은 매커니즘으로 실행됩니다.<br>
-	Character의 UseSkill을 통해 BattleSystem에 SkillRequest를 예약 → BattleSystem이 SkillRequest의 Skill에 순차적으로 Cast 호출 → Character에 ReserveSkillAction을 통해 AnimatedCharacter에 SkillAction을 예약 → Character의 ReserveCommandBuffer를 통해 커맨드 버퍼를 예약하여 Skill의 애니메이션을 트리그 → 애니메이션의 Event를 통해 AnimatedCharacter의 SkillAction을 순차적으로 실행
+    Character의 UseSkill을 통해 BattleSystem에 SkillRequest를 예약 → BattleSystem이 SkillRequest의 Skill에 순차적으로 Cast 호출 → Character에 ReserveSkillAction을 통해 AnimatedCharacter에 SkillAction을 예약 → Character의 ReserveCommandBuffer를 통해 커맨드 버퍼를 예약하여 Skill의 애니메이션을 트리그 → 애니메이션의 Event를 통해 AnimatedCharacter의 SkillAction을 순차적으로 실행
