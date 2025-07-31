@@ -40,9 +40,9 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 #### AnimatedCharacter
 AnimatedCharacter 클래스는 Animator 컴포넌트와 상호작용하는 컴포넌트이며, Character클래스가 CharacterAsset을 참조하여 Prefab을 생성할 때, 생성된 GameObject에 붙습니다. 수행하는 기능은 다음과 같습니다.
-> 1.스킬의 효과를 나타내는 SkillAction을 순차적으로 처리
-> 2.애니메이션 재생이 끝났을 경우 AnimationEndCallback을 통해 Character에 전달
-> 3.해당 Character가 사용하는 Animator를 GetAnimator를 통해 반환
+> 1.스킬의 효과를 나타내는 SkillAction을 순차적으로 처리<br>
+> 2.애니메이션 재생이 끝났을 경우 AnimationEndCallback을 통해 Character에 전달<br>
+> 3.해당 Character가 사용하는 Animator를 GetAnimator를 통해 반환<br>
 이는 유니티 애니메이션의 Event 기능이 Animator가 붙은 GameObject를 기준으로 하므로 Character 클래스를 분리해놓은 것 입니다.
 
 #### 캐릭터의 스킬
