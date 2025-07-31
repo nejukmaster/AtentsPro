@@ -7,7 +7,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 기능
 ---------------------
-구현 목표로 하는 기능은 다음과 같습니다.
+구현 목표로 한 기능은 다음과 같습니다.
 
 **서버**
 > 1.유저 어카운트 관리(로그인, 재화, 아이템등)<br>
