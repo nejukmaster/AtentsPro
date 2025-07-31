@@ -80,13 +80,13 @@ Character의 스킬은 기본적으로 다음과 같은 매커니즘으로 실�
 스테이지
 -----------------------------------------
 **스테이지**는 전투가 이루어지는 스테이지를 총칭합니다. [Stage 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Battle/Stage/Stage.cs)를 상속하여 구현합니다. 스테이지의 구성 다음과 같습니다.
-* spawnPos: 스테이지가 아군 캐릭터들을 최초로 생성하는 포지션
-* substages: 스테이지를 구성하는 Substage 배열
-* track: Substage가 클리어 됨에 따라 카메라가 움직일 DollyTrack
-* substageChangeDelay: 카메라가 다음 Track Index까지 가는 속도를 조절
-* bIsEnd: 스테이지가 끝났는지 여부
-* Initialize: 스테이지를 초기화하는 메서드. 캐릭터를 생성하고, 메인 카메라를 track에 배치하는 작동을 합니다.
-* EnterSubstage: 지정된 Substage를 시작
-* EndStage: 스테이지를 완료 처리
-* IsSubstageEnd: Substage의 종료 조건을 결정하는 추상메서드
-* IsFailed: 스테이지의 실패 조건을 결정하는 추상메서드
+> spawnPos: 스테이지가 아군 캐릭터들을 최초로 생성하는 포지션<br>
+> substages: 스테이지를 구성하는 Substage 배열<br>
+> track: Substage가 클리어 됨에 따라 카메라가 움직일 DollyTrack<br>
+> substageChangeDelay: 카메라가 다음 Track Index까지 가는 속도를 조절<br>
+> bIsEnd: 스테이지가 끝났는지 여부<br>
+> Initialize: 스테이지를 초기화하는 메서드. 캐릭터를 생성하고, 메인 카메라를 track에 배치하는 작동을 합니다.<br>
+> EnterSubstage: 지정된 Substage를 시작<br>
+> EndStage: 스테이지를 완료 처리<br>
+> IsSubstageEnd: Substage의 종료 조건을 결정하는 추상메서드<br>
+> IsFailed: 스테이지의 실패 조건을 결정하는 추상메서드<br>
