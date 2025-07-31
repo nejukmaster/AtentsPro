@@ -71,7 +71,7 @@ Character의 스킬은 기본적으로 다음과 같은 매커니즘으로 실�
 > 2. 애니메이션 클립에 Event를 설정한다.<br>
 > 3. AtentsPro > CharacterAsset을 생성하고 이 데이터를 바인딩한다<br>
 > 4. 데이터베이스의 Characters 콜렉션에 해당 캐릭터의 데이터를 작성한다.<br>
-> 5. 캐릭터의 스킬 4개를 기획하여 데이터베이스의 DataSheet > SkillTable에 작성한다.<br>
+> 5. 캐릭터의 스킬 4개를 기획하여 Resources/DataSheet/SkillTable에 작성한다.<br>
 > 6. 기획을 바탕으로 Skill 클래스를 상속한 캐릭터의 스킬 클래스를 제작한다.<br>
 > 7. SkillBuilder 스태틱 클래스에 해당 스킬의 코드로 스킬의 객체를 생성하는 코드를 추가한다.<br>
 > 8. 스킬의 아이콘을 제작하고 아틀라스로 묶는다.<br>
