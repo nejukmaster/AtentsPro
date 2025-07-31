@@ -38,8 +38,11 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 > hp: 캐릭터의 현재 HP<br>
 > mp: 캐릭터의 현재 MP<br>
 
+#### CharacterAsset
+[CharacterAsset 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/CharacterAsset.cs)는 Character 클래스가 활성화될 때 생성할 모델과, 생성된 GameObject에 적용될 애니메이션 데이터를 담고있는 ScriptableObject 클래스입니다.
+
 #### AnimatedCharacter
-AnimatedCharacter 클래스는 Animator 컴포넌트와 상호작용하는 컴포넌트이며, Character클래스가 CharacterAsset을 참조하여 Prefab을 생성할 때, 생성된 GameObject에 붙습니다. 수행하는 기능은 다음과 같습니다.
+[AnimatedCharacter 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/AnimatedCharacter.cs)는 Animator 컴포넌트와 상호작용하는 컴포넌트이며, Character클래스가 CharacterAsset을 참조하여 Prefab을 생성할 때, 생성된 GameObject에 붙습니다. 수행하는 기능은 다음과 같습니다.
 > 1.스킬의 효과를 나타내는 SkillAction을 순차적으로 처리<br>
 > 2.애니메이션 재생이 끝났을 경우 AnimationEndCallback을 통해 Character에 전달<br>
 > 3.해당 Character가 사용하는 Animator를 GetAnimator를 통해 반환
