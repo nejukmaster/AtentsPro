@@ -66,7 +66,7 @@ Character의 스킬은 기본적으로 다음과 같은 매커니즘으로 실�
 > 4. Character의 ReserveCommandBuffer를 통해 커맨드 버퍼를 예약하여 Skill의 애니메이션을 트리그<br>
 > 5. 애니메이션의 Event를 통해 AnimatedCharacter의 SkillAction을 순차적으로 실행
 
-##### 새로운 캐릭터 제작 프로세스
+#### 새로운 캐릭터 제작 프로세스
 > 1. 캐릭터로 사용할 모델, 애니메이션 데이터를 준비하고, 해당 캐릭터용 AnimatorController를 생성한다.<br>
 > 2. 애니메이션 클립에 Event를 설정한다.<br>
 > 3. AtentsPro > CharacterAsset을 생성하고 이 데이터를 바인딩한다<br>
