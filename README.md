@@ -24,7 +24,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 캐릭터
 --------------------
-캐릭터는 **스테이지**에 등장하여 전투를 하는 아군/적군을 총칭합니다. [Character 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/Character.cs)를 통해 구현합니다.
+**캐릭터**는 **스테이지**에 등장하여 전투를 하는 아군/적군을 총칭합니다. [Character 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/Character.cs)를 통해 구현합니다.
 
 #### 캐릭터 스테이터스
 캐릭터 스테이터스는 [Status 구조체](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/Status.cs)를 통해 구현합니다. 각 항목은 다음과 같습니다.
@@ -76,3 +76,17 @@ Character의 스킬은 기본적으로 다음과 같은 매커니즘으로 실�
 > 7. SkillBuilder 스태틱 클래스에 해당 스킬의 코드로 스킬의 객체를 생성하는 코드를 추가한다.<br>
 > 8. 스킬의 아이콘을 제작하고 아틀라스로 묶는다.<br>
 > 9. 해당 캐릭터의 초상화와 전신 일러스트를 제작한다.<br>
+
+스테이지
+-----------------------------------------
+**스테이지**는 전투가 이루어지는 스테이지를 총칭합니다. [Stage 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Battle/Stage/Stage.cs)를 상속하여 구현합니다. 스테이지의 구성 다음과 같습니다.
+* spawnPos: 스테이지가 아군 캐릭터들을 최초로 생성하는 포지션
+* substages: 스테이지를 구성하는 Substage 배열
+* track: Substage가 클리어 됨에 따라 카메라가 움직일 DollyTrack
+* substageChangeDelay: 카메라가 다음 Track Index까지 가는 속도를 조절
+* bIsEnd: 스테이지가 끝났는지 여부
+* Initialize: 스테이지를 초기화하는 메서드. 캐릭터를 생성하고, 메인 카메라를 track에 배치하는 작동을 합니다.
+* EnterSubstage: 지정된 Substage를 시작
+* EndStage: 스테이지를 완료 처리
+* IsSubstageEnd: Substage의 종료 조건을 결정하는 추상메서드
+* IsFailed: 스테이지의 실패 조건을 결정하는 추상메서드
