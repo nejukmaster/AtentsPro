@@ -38,6 +38,13 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 > hp: 캐릭터의 현재 HP<br>
 > mp: 캐릭터의 현재 MP<br>
 
+#### AnimatedCharacter
+AnimatedCharacter 클래스는 Animator 컴포넌트와 상호작용하는 컴포넌트이며, Character클래스가 CharacterAsset을 참조하여 Prefab을 생성할 때, 생성된 GameObject에 붙습니다. 수행하는 기능은 다음과 같습니다.
+> 1.스킬의 효과를 나타내는 SkillAction을 순차적으로 처리
+> 2.애니메이션 재생이 끝났을 경우 AnimationEndCallback을 통해 Character에 전달
+> 3.해당 Character가 사용하는 Animator를 GetAnimator를 통해 반환
+이는 유니티 애니메이션의 Event 기능이 Animator가 붙은 GameObject를 기준으로 하므로 Character 클래스를 분리해놓은 것 입니다.
+
 #### 캐릭터의 스킬
 각 캐릭터는 기본 공격과 3개의 액티브 스킬을 가지고, 각 스킬들은 [Skill 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Battle/Skill/Skill.cs)를 상속하여 구현합니다.
 > mpRequire: 이 Skill이 소모하는 MP의 양<br>
