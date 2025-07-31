@@ -30,7 +30,14 @@
 > attack: 캐릭터의 공격력<br>
 > defence: 캐릭터의 방어력<br>
 > criticalRate: 캐릭터의 크리티컬 확률<br>
-> criticalDamage: 캐릭터의 크리티컬 데미지<br>
+> criticalDamage: 캐릭터의 크리티컬시 데미지 증가량<br>
 > attackSpeed: 캐릭터의 기본공격 속도<br>
 > hp: 캐릭터의 현재 HP<br>
 > mp: 캐릭터의 현재 MP<br>
+
+#### 캐릭터의 스킬
+각 캐릭터는 기본 공격과 3개의 액티브 스킬을 가지고, 각 스킬들은 [Skill 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Battle/Skill/Skill.cs)를 상속하여 구현합니다.
+> mpRequire: 이 Skill이 소모하는 MP의 양<br>
+> cooltime: 이 Skill의 쿨타임<br>
+> Cast: 이 Skill이 사용되었을 때, 호출될 메서드<br>
+> GetTargetables: 이 Skill을 사용가능한 대상을 반환하는 메서드<br>
