@@ -31,4 +31,9 @@
 캐릭터는 **스테이지**에 등장하여 전투를 하는 아군/적군을 총칭합니다. [Character 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/Character.cs)를 통해 구현합니다.
 
 #### 캐릭터 스테이터스
-캐릭터 스테이터스는 
+캐릭터 스테이터스는 [Status 구조체](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/Status.cs)를 통해 구현합니다. 각 항목은 다음과 같습니다.
+> maxHp: 캐릭터의 최대 HP<br>
+> maxMp: 캐릭터의 최대 MP<br>
+> attack: 캐릭터의 공격력<br>
+> defence: 캐릭터의 방어력<br>
+> criticalRate: 캐릭터의 크리티컬 확률<br>
