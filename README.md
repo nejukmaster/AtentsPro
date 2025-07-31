@@ -41,6 +41,9 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 #### CharacterAsset
 [CharacterAsset 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/CharacterAsset.cs)는 Character 클래스가 활성화될 때 생성할 모델과, 생성된 GameObject에 적용될 애니메이션 데이터를 담고있는 ScriptableObject 클래스입니다.
 
+#### CharacterCommandBuffer
+[CharacterCommandBuffer 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/CharacterCommandBuffer.cs)는 Character의 행동을 제어하는 CharacterCommand를 관리하는 클래스입니다. 캐릭터는 다른 장소로 이동하거나 애니메이션을 실행하는데 비해, 사용자의 UI조작은 언제든 일어날 수 있으므로, UI를 통해 발생된 캐릭터 조작 명령을 CharacterCommand 형태로 큐잉하여 순차적으로 관리합니다. 이는 "bCmdReady" 프로퍼티를 통해 한 CharacterCommand가 종료되어야 다음 CharacterCommand를 실행하는 구조로 되어있습니다.
+
 #### AnimatedCharacter
 [AnimatedCharacter 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/AnimatedCharacter.cs)는 Animator 컴포넌트와 상호작용하는 컴포넌트이며, Character클래스가 CharacterAsset을 참조하여 Prefab을 생성할 때, 생성된 GameObject에 붙습니다. 수행하는 기능은 다음과 같습니다.
 > 1.스킬의 효과를 나타내는 SkillAction을 순차적으로 처리<br>
