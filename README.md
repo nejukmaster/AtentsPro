@@ -27,16 +27,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 **캐릭터**는 **스테이지**에 등장하여 전투를 하는 아군/적군을 총칭합니다. [Character 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/Character.cs)를 통해 구현합니다.
 
 #### 캐릭터 스테이터스
-캐릭터 스테이터스는 [Status 구조체](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/Status.cs)를 통해 구현합니다. 각 항목은 다음과 같습니다.
-> maxHp: 캐릭터의 최대 HP<br>
-> maxMp: 캐릭터의 최대 MP<br>
-> attack: 캐릭터의 공격력<br>
-> defence: 캐릭터의 방어력<br>
-> criticalRate: 캐릭터의 크리티컬 확률<br>
-> criticalDamage: 캐릭터의 크리티컬시 데미지 증가량<br>
-> attackSpeed: 캐릭터의 기본공격 속도<br>
-> hp: 캐릭터의 현재 HP<br>
-> mp: 캐릭터의 현재 MP<br>
+캐릭터 스테이터스는 [Status 구조체](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/Status.cs)를 통해 구현합니다. 이는 서버에 캐릭터 정보 요청을 보내어 받아올 수 있습니다.
 
 #### CharacterAsset
 [CharacterAsset 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/CharacterAsset.cs)는 Character 클래스가 활성화될 때 생성할 모델과, 생성된 GameObject에 적용될 애니메이션 데이터를 담고있는 ScriptableObject 클래스입니다.
