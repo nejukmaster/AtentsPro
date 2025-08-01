@@ -40,7 +40,7 @@ SpriteAtlas:
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 1
-      enableTightPacking: 1
+      enableTightPacking: 0
       enableAlphaDilation: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
@@ -83,10 +83,13 @@ SpriteAtlas:
     - 5da030a51ac98704d9b5d8728b22b318: 21300000
     - fdeb31f61dba5fe46911c5042593f34b: 21300000
     - 7d8d0e1777618bc48bb5ad28f03c04f4: 21300000
+    - dda43f28783c0bf42872575bd46c26eb: 21300000
     - 4a52e058c2016de428b28f1de73b2616: 21300000
     - 998628885825c374e815ab3a44e194b9: 21300000
     - e56779d94b688df46b761f6ac44917ca: 21300000
     - cff8994a812239949a4d3d3580ac1dff: 21300000
+    - 76fdd46a03726e04d9a875dbc951f337: 21300000
+    - 1c27cabb247f3dd44b183590fa99c3bb: 21300000
     - 995a2dbb22d317d4abc80f4dda38acde: 21300000
     - c5b1d2fb3a2d3944092eba3d6dbc8762: 21300000
     - 5f968d7ee3393804a9fd1cf6c8d89973: 21300000
@@ -105,10 +108,13 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5da030a51ac98704d9b5d8728b22b318, type: 3}
   - {fileID: 21300000, guid: fdeb31f61dba5fe46911c5042593f34b, type: 3}
   - {fileID: 21300000, guid: 7d8d0e1777618bc48bb5ad28f03c04f4, type: 3}
+  - {fileID: 21300000, guid: dda43f28783c0bf42872575bd46c26eb, type: 3}
   - {fileID: 21300000, guid: 4a52e058c2016de428b28f1de73b2616, type: 3}
   - {fileID: 21300000, guid: 998628885825c374e815ab3a44e194b9, type: 3}
   - {fileID: 21300000, guid: e56779d94b688df46b761f6ac44917ca, type: 3}
   - {fileID: 21300000, guid: cff8994a812239949a4d3d3580ac1dff, type: 3}
+  - {fileID: 21300000, guid: 76fdd46a03726e04d9a875dbc951f337, type: 3}
+  - {fileID: 21300000, guid: 1c27cabb247f3dd44b183590fa99c3bb, type: 3}
   - {fileID: 21300000, guid: 995a2dbb22d317d4abc80f4dda38acde, type: 3}
   - {fileID: 21300000, guid: c5b1d2fb3a2d3944092eba3d6dbc8762, type: 3}
   - {fileID: 21300000, guid: 5f968d7ee3393804a9fd1cf6c8d89973, type: 3}
@@ -126,10 +132,13 @@ SpriteAtlas:
   - gameTitle
   - box
   - StageFailedTitle
+  - characterPartyIcon
   - inventoryIcon
   - charactersIcon
   - TargetingMarker
   - Ellipse 41
+  - goldenArrow
+  - characterRecruit
   - edge
   - weponsIcon
   - characterlistIcon

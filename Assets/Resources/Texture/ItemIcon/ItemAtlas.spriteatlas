@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DMY_Atlas
+  m_Name: ItemAtlas
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -45,29 +45,29 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 21300000, guid: 7e28521191a999041b748de6a8322988, type: 3}
-    - {fileID: 21300000, guid: 4ac883e23fca0b8468c35fcbbeca3fc1, type: 3}
-    - {fileID: 21300000, guid: 4218e20d2c10f004694576c7e2188103, type: 3}
-    - {fileID: 21300000, guid: 4d42dc42ce651524bac89aa5a338db84, type: 3}
+    - {fileID: 21300000, guid: 72a4e7d2dc13a8541ac4975fabcdf13e, type: 3}
+    - {fileID: 21300000, guid: 0bbaf6b01b3d58f4ba7edf34d440c722, type: 3}
+    - {fileID: 21300000, guid: ec860bc8d51b6604ca9a9bb6660fe12c, type: 3}
+    - {fileID: 21300000, guid: 25a283eb848ae6247b1120f0c57c1ac1, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
-    - 7e28521191a999041b748de6a8322988: 21300000
-    - 4d42dc42ce651524bac89aa5a338db84: 21300000
-    - 4ac883e23fca0b8468c35fcbbeca3fc1: 21300000
-    - 4218e20d2c10f004694576c7e2188103: 21300000
+    - 0bbaf6b01b3d58f4ba7edf34d440c722: 21300000
+    - 72a4e7d2dc13a8541ac4975fabcdf13e: 21300000
+    - ec860bc8d51b6604ca9a9bb6660fe12c: 21300000
+    - 25a283eb848ae6247b1120f0c57c1ac1: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 7e28521191a999041b748de6a8322988, type: 3}
-  - {fileID: 21300000, guid: 4d42dc42ce651524bac89aa5a338db84, type: 3}
-  - {fileID: 21300000, guid: 4ac883e23fca0b8468c35fcbbeca3fc1, type: 3}
-  - {fileID: 21300000, guid: 4218e20d2c10f004694576c7e2188103, type: 3}
+  - {fileID: 21300000, guid: 0bbaf6b01b3d58f4ba7edf34d440c722, type: 3}
+  - {fileID: 21300000, guid: 72a4e7d2dc13a8541ac4975fabcdf13e, type: 3}
+  - {fileID: 21300000, guid: ec860bc8d51b6604ca9a9bb6660fe12c, type: 3}
+  - {fileID: 21300000, guid: 25a283eb848ae6247b1120f0c57c1ac1, type: 3}
   m_PackedSpriteNamesToIndex:
-  - DMY_01
-  - DMY_00
-  - DMY_02
-  - DMY_03
+  - gold_bundle
+  - apple
+  - Gold
+  - Jem
   m_RenderDataMap: {}
-  m_Tag: DMY_Atlas
+  m_Tag: ItemAtlas
   m_IsVariant: 0
