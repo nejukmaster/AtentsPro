@@ -94,4 +94,14 @@ Character의 스킬은 기본적으로 다음과 같은 매커니즘으로 실�
 또한 **Substage**의 구성은 다음과 같습니다.
 > teamPos: 해당 Substage에서 아군 캐릭터들이 위치할 Position<br>
 > enemyPos: 해당 Substage에서 적 캐릭터들이 위치할 Position<br>
-> enemiesCharacter: 해당 Substage에 등장할 적 목록<br>
+> enemiesCharacter: 해당 Substage에 등장할 적 목록. 클라이언트 변조를 막기 위해 전투 개시시 서버로부터 받아옵니다.<br>
+
+#### 새로운 스테이지 제작 프로세스
+> 1. 게임 오브젝트를 생성하고 Stage 컴포넌트를 추가<br>
+> 2. 스테이지 환경을 조성<br>
+> 3. SpawnPos를 추가하고 GUI를 통해 위치를 설정<br>
+> 4. Substage를 추가하고 GUI를 통해 teamPos및 enemyPos를 설정<br>
+> 5. 게임 오브젝트를 프리팹으로 제작<br>
+> 6. 데이터베이스 Stages 클러스터에 해당 Stage를 추가하고, enemies및 rewards 설정<br>
+> 7. 데이터베이스 Users 클러스터에 원하는 유저의 enableStages에 해당 Stage를 추가<br>
+> 8. Resources/DataSheet에 해당 스테이지의 정보를 추가<br>
