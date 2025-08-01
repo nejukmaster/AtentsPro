@@ -44,13 +44,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 이는 유니티 애니메이션의 Event 기능이 Animator가 붙은 GameObject를 기준으로 하므로 Character 클래스를 분리해놓은 것 입니다.
 
 #### 캐릭터의 스킬
-각 캐릭터는 기본 공격과 3개의 액티브 스킬을 가지고, 각 스킬들은 [Skill 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Battle/Skill/Skill.cs)를 상속하여 구현합니다.
-> mpRequire: 이 Skill이 소모하는 MP의 양<br>
-> cooltime: 이 Skill의 쿨타임<br>
-> Cast: 이 Skill이 사용되었을 때, 호출될 메서드<br>
-> GetTargetables: 이 Skill을 사용가능한 대상을 반환하는 메서드<br>
-
-Character의 스킬은 기본적으로 다음과 같은 매커니즘으로 실행됩니다.<br>
+각 캐릭터는 기본 공격과 3개의 액티브 스킬을 가지고, 각 스킬들은 [Skill 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Battle/Skill/Skill.cs)를 상속하여 구현합니다. Character의 스킬은 기본적으로 다음과 같은 매커니즘으로 실행됩니다.
 > 1. Character의 UseSkill을 통해 BattleSystem에 SkillRequest를 예약<br>
 > 2. BattleSystem이 SkillRequest의 Skill에 순차적으로 Cast 호출<br>
 > 3. Character에 ReserveSkillAction을 통해 AnimatedCharacter에 SkillAction을 예약<br>
