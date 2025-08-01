@@ -28,6 +28,10 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 ![Login Flowchart](./Images/LoginFlowchart.png)
 
+전투
+--------------------
+전투는 플레이어가 선택한 스테이지에 입장하여 플레이어가 설정한 파티를 통해 적을 무찌르고 보상을 받는 과정입니다. 전투는 전투 씬에서 진행되며, 씬에 진입할 때 서버에 현재 스테이지 진입 요청을 하게됩니다. 그러면 서버는 요청의 유효성을 검사하고, 스테이지의 정보를 응답으로 보내주게됩니다. 이 정보를 바탕으로 전투 씬 로드시 스테이지와 적을 생성하여 전투를 진행하고, 스테이지는 각 서브스테이지의 클리어 조건과 스테이지 실패 조건을 검사하기 시작합니다. 
+
 캐릭터
 --------------------
 **캐릭터**는 **스테이지**에 등장하여 전투를 하는 아군/적군을 총칭하며 [Character 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/Character.cs)를 통해 구현합니다. CharacterCommandBuffer를 통해 캐릭터의 움직임을 스킬이나 시스템이 예약하여 순차적으로 처리될 수 있도록 하였으며, 새로운 캐릭터를 제작할 때, 제작 프로세스를 정형화하여 게임이 확장성을 갖추도록 만들었습니다.
