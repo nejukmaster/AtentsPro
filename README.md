@@ -105,3 +105,4 @@ Character의 스킬은 기본적으로 다음과 같은 매커니즘으로 실�
 > 6. 데이터베이스 Stages 클러스터에 해당 Stage를 추가하고, enemies및 rewards 설정<br>
 > 7. 데이터베이스 Users 클러스터에 원하는 유저의 enableStages에 해당 Stage를 추가<br>
 > 8. Resources/DataSheet에 해당 스테이지의 정보를 추가<br>
+> 9. Resources/Texture/Illustration/StagePreveiw에 Stage의 프리뷰 이미지를 제작해서 저장<br>
