@@ -81,3 +81,9 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 > 2. "사용" 버튼을 클릭시 서버로 아이템 사용 요청을 보냄<br>
 > 3. 서버는 요청의 유효성을 검사하고, 아이템을 사용처리<br>
 > 4. 이후 결과 메세지와 업데이트된 유저 정보를 담은 응답을 반환하고, 클라이언트는 UI에 이를 업데이트<br>
+
+#### 새로운 아이템 제작 프로세스
+> 1. Resources/DataSheet/ItemTable.csv에 아이템 정보 추가
+> 2. Resources/Texture/ItemIcon에 아이템 아이콘 텍스쳐를 제작하여 추가
+> 3. 사용가능한 아이템일 경우 Server/AtentsServer.js에 아이템 사용 요청시 처리될 함수를 추가
+> 4. 해당 함수를 UserItem 메서드 분기에 추가
