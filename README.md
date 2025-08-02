@@ -35,6 +35,9 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 ![Battle Flowchart](./Images/BattleFlowchart.png)
 
+#### 캐릭터 행동 및 스킬
+
+
 캐릭터
 --------------------
 **캐릭터**는 **스테이지**에 등장하여 전투를 하는 아군/적군을 총칭하며 [Character 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/Character.cs)를 통해 구현합니다. CharacterCommandBuffer를 통해 캐릭터의 움직임을 스킬이나 시스템이 예약하여 순차적으로 처리될 수 있도록 하였으며, 새로운 캐릭터를 제작할 때, 제작 프로세스를 정형화하여 게임이 확장성을 갖추도록 만들었습니다.
@@ -50,6 +53,9 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 이는 유니티 애니메이션의 Event 기능이 Animator가 붙은 GameObject를 기준으로 하므로 Character 클래스를 분리해놓은 것 입니다.
 
+#### 스킬
+각 캐릭터는 기본 공격과 3개의 액티브 스킬을 가지고, 각 스킬들은 [Skill 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Battle/Skill/Skill.cs)를 상속하여 구현합니다.
+
 #### 새로운 캐릭터 제작 프로세스
 > 1. 캐릭터로 사용할 모델, 애니메이션 데이터를 준비하고, 해당 캐릭터용 AnimatorController를 생성한다.<br>
 > 2. 애니메이션 클립에 Event를 설정한다.<br>
@@ -60,15 +66,6 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 > 7. SkillBuilder 스태틱 클래스에 해당 스킬의 코드로 스킬의 객체를 생성하는 코드를 추가한다.<br>
 > 8. 스킬의 아이콘을 제작하고 아틀라스로 묶는다.<br>
 > 9. 해당 캐릭터의 초상화와 전신 일러스트를 제작한다.<br>
-
-스킬
----------------------------------
-각 캐릭터는 기본 공격과 3개의 액티브 스킬을 가지고, 각 스킬들은 [Skill 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Battle/Skill/Skill.cs)를 상속하여 구현합니다. Character의 스킬은 기본적으로 다음과 같은 매커니즘으로 실행됩니다.
-> 1. Character의 UseSkill을 통해 BattleSystem에 SkillRequest를 예약<br>
-> 2. BattleSystem이 SkillRequest의 Skill에 순차적으로 Cast 호출<br>
-> 3. Character에 ReserveSkillAction을 통해 AnimatedCharacter에 SkillAction을 예약<br>
-> 4. Character의 ReserveCommandBuffer를 통해 커맨드 버퍼를 예약하여 Skill의 애니메이션을 트리그<br>
-> 5. 애니메이션의 Event를 통해 AnimatedCharacter의 SkillAction을 순차적으로 실행
 
 스테이지
 -----------------------------------------
