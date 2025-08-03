@@ -40,13 +40,13 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 캐릭터
 --------------------
-**캐릭터**는 **스테이지**에 등장하여 전투를 하는 아군/적군을 총칭하며 [Character 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/Character.cs)를 통해 구현합니다. CharacterCommandBuffer를 통해 캐릭터의 움직임을 스킬이나 시스템이 예약하여 순차적으로 처리될 수 있도록 하였으며, 새로운 캐릭터를 제작할 때, 제작 프로세스를 정형화하여 게임이 확장성을 갖추도록 만들었습니다.
+**캐릭터**는 **스테이지**에 등장하여 전투를 하는 아군/적군을 총칭하며 [Character 클래스](./Assets/Scripts/Objects/Character/Character.cs)를 통해 구현합니다. CharacterCommandBuffer를 통해 캐릭터의 움직임을 스킬이나 시스템이 예약하여 순차적으로 처리될 수 있도록 하였으며, 새로운 캐릭터를 제작할 때, 제작 프로세스를 정형화하여 게임이 확장성을 갖추도록 만들었습니다.
 
 #### CharacterCommandBuffer
-[CharacterCommandBuffer 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/CharacterCommandBuffer.cs)는 Character의 행동을 제어하는 CharacterCommand를 관리하는 클래스입니다. 캐릭터는 다른 장소로 이동하거나 애니메이션을 실행하는데 비해, 사용자의 UI조작은 언제든 일어날 수 있으므로, UI를 통해 발생된 캐릭터 조작 명령을 CharacterCommand 형태로 큐잉하여 순차적으로 관리합니다. 이는 "bCmdReady" 프로퍼티를 통해 한 CharacterCommand가 종료되어야 다음 CharacterCommand를 실행하는 구조로 되어있습니다.
+[CharacterCommandBuffer 클래스](./Assets/Scripts/Objects/Character/CharacterCommandBuffer.cs)는 Character의 행동을 제어하는 CharacterCommand를 관리하는 클래스입니다. 캐릭터는 다른 장소로 이동하거나 애니메이션을 실행하는데 비해, 사용자의 UI조작은 언제든 일어날 수 있으므로, UI를 통해 발생된 캐릭터 조작 명령을 CharacterCommand 형태로 큐잉하여 순차적으로 관리합니다. 이는 "bCmdReady" 프로퍼티를 통해 한 CharacterCommand가 종료되어야 다음 CharacterCommand를 실행하는 구조로 되어있습니다.
 
 #### AnimatedCharacter
-[AnimatedCharacter 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Objects/Character/AnimatedCharacter.cs)는 Animator 컴포넌트와 상호작용하는 컴포넌트이며, Character클래스가 CharacterAsset을 참조하여 Prefab을 생성할 때, 생성된 GameObject에 붙습니다. 수행하는 기능은 다음과 같습니다.
+[AnimatedCharacter 클래스](./Assets/Scripts/Objects/Character/AnimatedCharacter.cs)는 Animator 컴포넌트와 상호작용하는 컴포넌트이며, Character클래스가 CharacterAsset을 참조하여 Prefab을 생성할 때, 생성된 GameObject에 붙습니다. 수행하는 기능은 다음과 같습니다.
 > 1. 스킬의 효과를 나타내는 SkillAction을 순차적으로 처리<br>
 > 2. 애니메이션 재생이 끝났을 경우 AnimationEndCallback을 통해 Character에 전달<br>
 > 3. 해당 Character가 사용하는 Animator를 GetAnimator를 통해 반환
@@ -54,7 +54,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 이는 유니티 애니메이션의 Event 기능이 Animator가 붙은 GameObject를 기준으로 하므로 Character 클래스를 분리해놓은 것 입니다.
 
 #### 스킬
-각 캐릭터는 기본 공격과 3개의 액티브 스킬을 가지고, 각 스킬들은 [Skill 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Battle/Skill/Skill.cs)를 상속하여 구현합니다.
+각 캐릭터는 기본 공격과 3개의 액티브 스킬을 가지고, 각 스킬들은 [Skill 클래스](./Assets/Scripts/Battle/Skill/Skill.cs)를 상속하여 구현합니다.
 
 #### 새로운 캐릭터 제작 프로세스
 > 1. 캐릭터로 사용할 모델, 애니메이션 데이터를 준비하고, 해당 캐릭터용 AnimatorController를 생성한다.<br>
@@ -69,7 +69,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 스테이지
 -----------------------------------------
-**스테이지**는 전투가 이루어지는 각 스테이지를 말합니다. [Stage 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Battle/Stage/Stage.cs)를 상속하여 구현합니다. 스테이지는 복수의 Substage로 구성되어있으며, Resources/DataSheet/StageTable.csv에 각 스테이지에 대한 정보를 저장하고있습니다. [StageEditor 클래스](https://github.com/nejukmaster/AtentsPro/blob/main/Assets/Scripts/Editor/Battle/StageEditor.cs)를 제작하여 스테이지 제작시에 GUI를 사용하여 보다 빠르고 효율적으로 제작할 수 있도록 하였습니다.
+**스테이지**는 전투가 이루어지는 각 스테이지를 말합니다. [Stage 클래스](./Assets/Scripts/Battle/Stage/Stage.cs)를 상속하여 구현합니다. 스테이지는 복수의 Substage로 구성되어있으며, Resources/DataSheet/StageTable.csv에 각 스테이지에 대한 정보를 저장하고있습니다. [StageEditor 클래스](./Assets/Scripts/Editor/Battle/StageEditor.cs)를 제작하여 스테이지 제작시에 GUI를 사용하여 보다 빠르고 효율적으로 제작할 수 있도록 하였습니다.
 
 **Substage**는 스테이지를 구성하는 작은 스테이지들입니다. 아군들과 적들이 위치할 포지션에 대한 정보와 등장하는 적들의 정보를 담고있습니다. 여기서 적들의 정보는 Resources/DataSheet/StageTable에 저장되어있으나, 실제로는 클라이언트 변조를 예방하기 위하여 전투 개시시에 서버에 요청하여 받아옵니다.
 
