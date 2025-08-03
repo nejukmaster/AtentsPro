@@ -47,6 +47,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 #### 홈 씬 진입
  홈 씬에 진입할 경우, 클라이언트는 서버에 최신의 유저 정보를 요청하게 됩니다. 먼저 로딩씬을 로드하고 유저 정보 요청을 보내며, 유저 정보가 정상적으로 도착하면 GameManager에 업데이트한 후, 홈 씬을 로드하게 됩니다. 이를 도식화 하면 다음과 같습니다.
+ ![HomeSceneLoadFlowchart](./Images/HomeSceneLoadFlowchart.png)
 
 캐릭터
 --------------------
