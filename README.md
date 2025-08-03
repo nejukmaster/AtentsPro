@@ -47,7 +47,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 #### 홈
  홈에서는 닉네임과 레벨과 같은 유저의 정보, 골드, 젬과 같은 유저의 재화를 확인할 수 있으며, 하단 네비게이션 뷰와 우측 전투 버튼을 통해 각 UI에 접근할 수 있습니다.
-
+![Home](./Images/Home.png)
 
 캐릭터
 --------------------
