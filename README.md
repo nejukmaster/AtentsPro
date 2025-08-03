@@ -36,7 +36,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 ![Battle Flowchart](./Images/BattleFlowchart.png)
 
 #### 캐릭터 행동 및 스킬
-
+전투에서 캐릭터의 행동은 캐릭터 커맨드를 통해 제어됩니다. 캐릭터 커맨드는 CharacterCommandBuffer에 정의되어있습니다.
 
 캐릭터
 --------------------
