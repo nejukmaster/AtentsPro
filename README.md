@@ -41,6 +41,10 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 ![CharacterCommand Flowchart](./Images/CharacterCommandFlowchart.png)
 
+홈
+--------------------
+  홈은 계정의 재화, 아이템, 보유 캐릭터를 확인하거나, 현재 파티의 구성을 변경, 새 캐릭터 모집 및 스테이지를 선택하여 전투씬으로 입장하는 것이 가능한 장소입니다.
+
 캐릭터
 --------------------
 **캐릭터**는 **스테이지**에 등장하여 전투를 하는 아군/적군을 총칭하며 [Character 클래스](./Assets/Scripts/Objects/Character/Character.cs)를 통해 구현합니다. CharacterCommandBuffer를 통해 캐릭터의 움직임을 스킬이나 시스템이 예약하여 순차적으로 처리될 수 있도록 하였으며, 새로운 캐릭터를 제작할 때, 제작 프로세스를 정형화하여 게임이 확장성을 갖추도록 만들었습니다.
