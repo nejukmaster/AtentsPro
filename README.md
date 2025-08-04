@@ -93,7 +93,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 > 9. 해당 캐릭터의 초상화와 전신 일러스트를 제작한다.<br>
 
 #### 스테이지
-**스테이지**는 전투가 이루어지는 각 스테이지를 말합니다. [Stage 클래스](./Assets/Scripts/Battle/Stage/Stage.cs)를 상속하여 구현합니다.  [StageTable](./Assets/Resources/DataSheet/StageTable.csv)에 각 스테이지에 대한 정보를 저장하고있습니다. [StageEditor 클래스](./Assets/Scripts/Editor/Battle/StageEditor.cs)를 제작하여 스테이지 제작시에 GUI를 사용하여 보다 빠르고 효율적으로 제작할 수 있도록 하였습니다.
+스테이지는 [Stage 클래스](./Assets/Scripts/Battle/Stage/Stage.cs)를 상속하여 구현합니다.  [StageTable](./Assets/Resources/DataSheet/StageTable.csv)에 각 스테이지에 대한 정보를 저장하고있습니다. [StageEditor 클래스](./Assets/Scripts/Editor/Battle/StageEditor.cs)를 제작하여 스테이지 제작시에 GUI를 사용하여 보다 빠르고 효율적으로 제작할 수 있도록 하였습니다.
 
 **Substage**는 스테이지를 구성하는 작은 스테이지들입니다. 아군들과 적들이 위치할 포지션에 대한 정보와 등장하는 적들의 정보를 담고있습니다. 여기서 적들의 정보는 Resources/DataSheet/StageTable.csv에 저장되어있으나, 실제로는 클라이언트 변조를 예방하기 위하여 전투 개시시에 서버에 요청하여 받아옵니다.
 
@@ -108,13 +108,8 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 > 8. Resources/DataSheet에 해당 스테이지의 정보를 추가<br>
 > 9. Resources/Texture/Illustration/StagePreveiw에 Stage의 프리뷰 이미지를 제작해서 저장<br>
 
-아이템
-----------------------------------------
-**아이템**은 캐릭터가 **가방 UI**에서 확인하거나 사용할 수 있는 요소입니다. 아이템의 정보는 Resources/DataSheet/ItemTable.csv에 저장되어있으며, 이름, 일러스트, 설명, 사용가능 여부로 구성됩니다. 아이템 사용시 프로세스는 다음과 같습니다.
-> 1. 아이템 확인시 사용이 가능한 아이템일 경우 "사용" 버튼 활성화<br>
-> 2. "사용" 버튼을 클릭시 서버로 아이템 사용 요청을 보냄<br>
-> 3. 서버는 요청의 유효성을 검사하고, 아이템을 사용처리<br>
-> 4. 이후 결과 메세지와 업데이트된 유저 정보를 담은 응답을 반환하고, 클라이언트는 UI에 이를 업데이트<br>
+#### 아이템
+아이템은 캐릭터가 가방 UI에서 확인하거나 사용할 수 있는 요소입니다. 아이템의 정보는 [ItemTable](./Assets/Resources/DataSheet/ItemTable.csv)에 저장되어있으며, 이름, 설명, 사용가능 여부로 구성됩니다
 
 #### 새로운 아이템 제작 프로세스
 > 1. Resources/DataSheet/ItemTable.csv에 아이템 정보 추가
