@@ -71,7 +71,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
   온라인 서비스를 상정한 게임이므로 향후 확장성을 고려하여 시스템을 디자인했습니다. 게임내 확장 가능한 모든 컨텐츠가 일정한 프로세스에 맞춰 추가될 수 있도록 하는 것이 최우선시한 목표이며, 또한, 그 과정에서 최대한 프로그래밍 과정을 적게 하는것이 두번째 목표였습니다.
   
 #### 캐릭터
-**캐릭터**는 **스테이지**에 등장하여 전투를 하는 아군/적군을 총칭하며 [Character 클래스](./Assets/Scripts/Objects/Character/Character.cs)를 통해 구현합니다. 캐릭터의 정보는 [CharacterTable]()
+**캐릭터**는 **스테이지**에 등장하여 전투를 하는 아군/적군을 총칭하며 [Character 클래스](./Assets/Scripts/Objects/Character/Character.cs)를 통해 구현합니다.
 
 #### AnimatedCharacter
 [AnimatedCharacter 클래스](./Assets/Scripts/Objects/Character/AnimatedCharacter.cs)는 Animator 컴포넌트와 상호작용하는 컴포넌트이며, Character클래스가 CharacterAsset을 참조하여 Prefab을 생성할 때, 생성된 GameObject에 붙습니다. 수행하는 기능은 다음과 같습니다.
@@ -86,14 +86,14 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 > 2. 애니메이션 클립에 Event를 설정한다.<br>
 > 3. AtentsPro > CharacterAsset을 생성하고 이 데이터를 바인딩한다<br>
 > 4. 데이터베이스의 Characters 콜렉션에 해당 캐릭터의 데이터를 작성한다.<br>
-> 5. 캐릭터의 스킬 4개를 기획하여 Resources/DataSheet/SkillTable에 작성한다.<br>
+> 5. 캐릭터의 스킬 4개를 기획하여 Resources/DataSheet/SkillTable.csv에 작성한다.<br>
 > 6. 기획을 바탕으로 Skill 클래스를 상속한 캐릭터의 스킬 클래스를 제작한다.<br>
 > 7. SkillBuilder 스태틱 클래스에 해당 스킬의 코드로 스킬의 객체를 생성하는 코드를 추가한다.<br>
 > 8. 스킬의 아이콘을 제작하고 아틀라스로 묶는다.<br>
 > 9. 해당 캐릭터의 초상화와 전신 일러스트를 제작한다.<br>
 
 #### 스테이지
-**스테이지**는 전투가 이루어지는 각 스테이지를 말합니다. [Stage 클래스](./Assets/Scripts/Battle/Stage/Stage.cs)를 상속하여 구현합니다.  Resources/DataSheet/StageTable.csv에 각 스테이지에 대한 정보를 저장하고있습니다. [StageEditor 클래스](./Assets/Scripts/Editor/Battle/StageEditor.cs)를 제작하여 스테이지 제작시에 GUI를 사용하여 보다 빠르고 효율적으로 제작할 수 있도록 하였습니다.
+**스테이지**는 전투가 이루어지는 각 스테이지를 말합니다. [Stage 클래스](./Assets/Scripts/Battle/Stage/Stage.cs)를 상속하여 구현합니다.  [StageTable](./Assets/Resources/DataSheet/StageTable.csv)에 각 스테이지에 대한 정보를 저장하고있습니다. [StageEditor 클래스](./Assets/Scripts/Editor/Battle/StageEditor.cs)를 제작하여 스테이지 제작시에 GUI를 사용하여 보다 빠르고 효율적으로 제작할 수 있도록 하였습니다.
 
 **Substage**는 스테이지를 구성하는 작은 스테이지들입니다. 아군들과 적들이 위치할 포지션에 대한 정보와 등장하는 적들의 정보를 담고있습니다. 여기서 적들의 정보는 Resources/DataSheet/StageTable.csv에 저장되어있으나, 실제로는 클라이언트 변조를 예방하기 위하여 전투 개시시에 서버에 요청하여 받아옵니다.
 
