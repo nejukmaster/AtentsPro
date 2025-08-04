@@ -119,4 +119,4 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 카툰 랜더링
 --------------------------
-  
+  원하는 게임 분위기를 내기위해 캐릭터에 사용될 카툰 쉐이더를 제작하였습니다. 목표는 일러스트풍의 카툰 쉐이딩 제작이었으며, URP에서 제공하는 기능을 십분 활용하기 위하여 URP의 Universal Lit 쉐이더를 복사하여 PBR 부분을 NPR 스타일로 교체하는 작업을 통해 구현하였습니다.
