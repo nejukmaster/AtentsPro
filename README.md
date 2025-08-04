@@ -121,3 +121,9 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 카툰 랜더링
 --------------------------
   원하는 게임 분위기를 내기위해 캐릭터에 사용될 카툰 쉐이더를 제작하였습니다. 목표는 일러스트풍의 카툰 쉐이딩 제작이었으며, URP에서 제공하는 기능을 십분 활용하기 위하여 URP의 Universal Lit 쉐이더를 복사하여 PBR 부분을 NPR 스타일로 교체하는 작업을 통해 구현하였습니다.
+
+#### 래디언스
+  부드러운 셀 셰이딩을 얻기위하여, 램프 텍스쳐를 샘플링하는것 보다 Threshold값과 Smooth값을 사용하여 래디언스값을 계산하는 편이 비용이 덜 들것으로 판단되어 해당 방법으로 셀 쉐이딩을 구현하였습니다. 다음은 래디언스 값을 계산한 코드입니다.
+'''hlsl
+  smoothstep(Threshold - Smooth, Threshold + Smooth, x)
+'''
