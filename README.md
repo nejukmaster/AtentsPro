@@ -124,6 +124,6 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 #### 래디언스
   부드러운 셀 셰이딩을 얻기위하여, 램프 텍스쳐를 샘플링하는것 보다 Threshold값과 Smooth값을 사용하여 래디언스값을 계산하는 편이 비용이 덜 들것으로 판단되어 해당 방법으로 셀 쉐이딩을 구현하였습니다. 다음은 래디언스 값을 계산한 코드입니다.
-'''hlsl
+```hlsl
   smoothstep(Threshold - Smooth, Threshold + Smooth, x)
-'''
+```
