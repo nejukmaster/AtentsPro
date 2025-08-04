@@ -64,7 +64,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 #### 파티 편성
   모집, 가방과 마찬가지로 하단 네비게이션을 통해 캐릭터 UI로 넘어갈 수 있으며, 여기서 좌측 버튼을 통해 파티 편성 UI로 넘어갈 수 있습니다. 파티는 최대 네명의 캐릭터로 구성될수 있습니다. 파티 편성 UI의 각 자리 버튼을 클릭하면 캐릭터 선택 UI가 활성화 되며, 배치할 캐릭터를 클릭하면 서버로 파티 편성 요청을 보내게 됩니다. 이 요청에는 변경된 자리의 인덱스와 변경한 캐릭터 정보를 담고 있으며, 서버는 이를 받아서 유효성 검사후 유저 정보를 업데이트합니다. 이후, 업데이트된 유저 정보를 응답으로 보내며, 클라이언트는 이를 받아 유저 정보를 업데이트하고 파티 편성 UI를 갱신합니다. 이를 도식화 하면 다음과 같습니다.
 
-![CharacterLineupFlowchart](./Images/CharacterLineupFlowchart)
+![CharacterLineupFlowchart](./Images/CharacterLineupFlowchart.png)
 
 캐릭터
 --------------------
