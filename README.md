@@ -147,3 +147,7 @@ float3 spherizedNormal = lerp(normalWS, centerToSurface, x);
 #### 쉐도우 캐스터 마스크
   얼굴의 코와 같이 다른 부위에 비해 과하게 튀어나온 부분이 있으면, 주변 표면에 그림자를 드리웁니다. 이 현상은 얼굴과 같은 시각적으로 민감한 부위에 나타나게되면 목표로 하는 일러스트 느낌이 크게 저해된다고 생각했으며, 이를 해결하는 방법을 모색했습니다. 
 ![ShadingComparision](./Images/ShadingComparision.png)
+
+단순히 외부 그림자를 받지 않도록 하는것은 나무나 돌과 같은 환경 요소에 의해 드리우는 그림자도 없어지기에 부자연스럽습니다. 이에 마스크 텍스쳐를 통해 메시의 특정 부분이 그림자 맵에 랜더링될 때 클리핑하여 그림자를 캐스팅하지 않도록하는 방법을 고안했고, ShadowCasterPass를 커스텀하여 쉐도우 캐스터 마스크를 구현했습니다.
+![Unity-chan ShadowCasterMask](./Assets/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/face_shadow_caster_mask.png)<br>
+<사용된 UnitChan 모델의 쉐도우 캐스터 마스크>
