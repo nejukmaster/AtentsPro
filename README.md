@@ -133,3 +133,10 @@ smoothstep(Threshold - Smooth, Threshold + Smooth, x)
 #### 노멀 구형화
   래디언스를 통해 부드러운 셀 셰이딩을 얻었지만, 아직 그림자가 지저분합니다. 이는 대부분의 일러스트에서, 특히, 캐릭터의 얼굴쪽 명암이 단순하게 표현되는게 원인임을 알 수 있습니다.<br>
 ![CharacterIllustSample](./Images/CharacterIllustSample.png)
+
+이를 표현하기 위해 표면의 노멀을 구에 가깝게 펴서 보다 단순한 명암을 얻는 방법을 고안했으며, 구의 기준이 될 월드 좌표를 GPU로 넘겨주고 실제 표면과 기준 좌표를 기준으로 그린 구의 노멀을 일정한 계수 만큼 보간하여 얻은 구형화된 노멀을 얻습니다. 아래는 구형화된 노멀을 얻는 코드입니다.
+```hlsl
+float3 centerToSurface = normalize(positionWS - vertexAveragePos);
+float3 spherizedNormal = lerp(normalWS, centerToSurface, x);
+```
+여기서 positionWS와 normalWS는 각각 표면의 월드 좌표에서의 위치와 노멀이며, vertexAveragePos는 구의 중심의 월드 좌표 위치입니다. 구의 노멀은 단순히 구의 중심을 시점, 표면의 월드 좌표를 종점으로 하는 벡터로 계산합니다. x는 구형화 계수이며, 1에 가까울수록 노멀이 구에 가깝게 나옵니다.
