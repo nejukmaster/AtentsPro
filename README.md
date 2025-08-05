@@ -132,3 +132,4 @@ smoothstep(Threshold - Smooth, Threshold + Smooth, x)
 
 #### 노멀 구형화
   래디언스를 통해 부드러운 셀 셰이딩을 얻었지만, 아직 그림자가 지저분합니다. 이는 대부분의 일러스트에서, 특히, 캐릭터의 얼굴쪽 명암이 단순하게 표현되는게 원인임을 알 수 있습니다.
+![CharacterIllustSample](./Images/CharacterIllustSample.png)
