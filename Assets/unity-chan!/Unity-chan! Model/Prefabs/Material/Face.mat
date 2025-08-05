@@ -129,8 +129,8 @@ Material:
     - _ReceiveShadows: 1
     - _ReflectSmooth: 0.25
     - _ReflectThreshold: 0.302
-    - _ShadowSmooth: 0.03
-    - _ShadowSpherizing: 0.933
+    - _ShadowSmooth: 0.0284
+    - _ShadowSpherizing: 0.905
     - _ShadowThreshold: 0.599
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
