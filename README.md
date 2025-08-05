@@ -129,3 +129,6 @@ smoothstep(Threshold - Smooth, Threshold + Smooth, x)
 ```
 래디언스는 그림자 뿐만 아니라 프레넬과 스펙큘러에도 적용될 수 있으며, one-step 셀 쉐이딩과 비교하면 아래와 같습니다.
 ![Radience Cel-Shading](./Images/RadienceCelShading.png)
+
+#### 노멀 구형화
+  래디언스를 통해 부드러운 셀 셰이딩을 얻었지만, 아직 그림자가 지저분합니다. 이는 대부분의 일러스트에서, 특히, 캐릭터의 얼굴쪽 명암이 단순하게 표현되는게 원인임을 알 수 있습니다.
