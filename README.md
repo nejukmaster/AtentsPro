@@ -143,3 +143,7 @@ float3 spherizedNormal = lerp(normalWS, centerToSurface, x);
 ![NormalSpherizing](./Images/NormalSpherizing.png)
 
 비교 사진에서 좀 더 단순화된 명암을 확인할 수 있습니다.
+
+#### 쉐도우 캐스터 마스크
+  얼굴의 코와 같이 다른 부위에 비해 과하게 튀어나온 부분이 있으면, 주변 표면에 그림자를 드리웁니다. 이 현상은 얼굴과 같은 시각적으로 민감한 부위에 나타나게되면 목표로 하는 일러스트 느낌이 크게 저해된다고 생각했으며, 이를 해결하는 방법을 모색했습니다. 
+![ShadingComparision](./Images/ShadingComparision.png)
