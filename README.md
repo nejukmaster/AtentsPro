@@ -154,3 +154,6 @@ float3 spherizedNormal = lerp(normalWS, centerToSurface, x);
 <사용된 UnityChan 모델의 쉐도우 캐스터 마스크>
 
 ![ShadowCasterMask](./Images/ShadowCasterMask.png)
+
+#### 외곽선
+  캐릭터의 외곽선은 URP에서 동작하는 SRP Batcher가 multi-Pass 쉐이더를 지원하지 않기에 외곽선 쉐이더를 따로 제작하여 MeshRenderer에 두 개의 머티리얼을 적용하는 방식으로 구현하였습니다.
