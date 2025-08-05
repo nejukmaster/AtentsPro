@@ -140,3 +140,4 @@ float3 centerToSurface = normalize(positionWS - vertexAveragePos);
 float3 spherizedNormal = lerp(normalWS, centerToSurface, x);
 ```
 여기서 positionWS와 normalWS는 각각 표면의 월드 좌표에서의 위치와 노멀이며, vertexAveragePos는 구의 중심의 월드 좌표 위치입니다. 구의 노멀은 단순히 구의 중심을 시점, 표면의 월드 좌표를 종점으로 하는 벡터로 계산합니다. x는 구형화 계수이며, 1에 가까울수록 노멀이 구에 가깝게 나옵니다.
+![NormalSpherizing](./Images/NormalSpherizing.png)
