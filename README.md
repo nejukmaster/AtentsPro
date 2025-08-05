@@ -150,5 +150,5 @@ float3 spherizedNormal = lerp(normalWS, centerToSurface, x);
 
 단순히 외부 그림자를 받지 않도록 하는것은 나무나 돌과 같은 환경 요소에 의해 드리우는 그림자도 없어지기에 부자연스럽습니다. 이에 마스크 텍스쳐를 통해 메시의 특정 부분이 그림자 맵에 랜더링될 때 클리핑하여 그림자를 캐스팅하지 않도록하는 방법을 고안했고, ShadowCasterPass를 커스텀하여 쉐도우 캐스터 마스크를 구현했습니다.
 
-![Unity-chan ShadowCasterMask](./Assets/unity-chan!/Unity-chan!_Model/Art/UnityChanShader/Texture/face_shadow_caster_mask.png)
+![Unity-chan ShadowCasterMask](./Images/face_shadow_caster_mask.png)<br>
 <사용된 UnitChan 모델의 쉐도우 캐스터 마스크>
