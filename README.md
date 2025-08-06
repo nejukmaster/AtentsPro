@@ -9,7 +9,9 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 ---------------------
 >1. [로그인](#login)
 >2. [전투](#battle)
->3. [캐릭터 행동 및 스킬](#character)
+>3. [홈](#home)
+>4. [확장성](#expandation)
+>5. [카툰 랜더링](#cartoon-rendering)
 
 기능
 ---------------------
@@ -50,6 +52,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 ![CharacterCommand Flowchart](./Images/CharacterCommandFlowchart.png)
 
+<a name="home"></a>
 홈
 --------------------
   홈은 계정의 재화, 아이템, 보유 캐릭터를 확인하거나, 현재 파티의 구성을 변경, 새 캐릭터 모집 및 스테이지를 선택하여 전투씬으로 입장하는 것이 가능한 장소입니다.
@@ -75,6 +78,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 ![CharacterLineupFlowchart](./Images/CharacterLineupFlowchart.png)
 
+<a name="expandation"></a>
 확장성
 --------------------
   온라인 서비스를 상정한 게임이므로 향후 확장성을 고려하여 시스템을 디자인했습니다. 게임내 확장 가능한 모든 컨텐츠가 일정한 프로세스에 맞춰 추가될 수 있도록 하는 것이 최우선시한 목표이며, 또한, 그 과정에서 코드를 쓰는 과정을 최대한 적게 하는것이 두번째 목표였습니다.
@@ -127,6 +131,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 > 3. 사용가능한 아이템일 경우 Server/AtentsServer.js에 아이템 사용 요청시 처리될 함수를 추가
 > 4. 해당 함수를 UserItem 메서드 분기에 추가
 
+<a name="cartoon-rendering"></a>
 카툰 랜더링
 --------------------------
   원하는 게임 분위기를 내기위해 캐릭터에 사용될 카툰 쉐이더를 제작하였습니다. 목표는 일러스트풍의 카툰 쉐이딩 제작이었으며, URP에서 제공하는 기능을 십분 활용하기 위하여 URP의 Universal Lit 쉐이더를 복사하여 PBR 부분을 NPR 스타일로 교체하는 작업을 통해 구현하였습니다.
