@@ -132,7 +132,8 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 > 4. 해당 함수를 UserItem 메서드 분기에 추가
 
 #### UI
-게임의 UI는 [UINavigatable](./Assets/Scripts/UI/UINavigatable.cs)를 상속받아 구현하며, UINavigatable가 붙은 UGUI GameObject를 [UINavigationSystem](./Assets/Scripts/System/UINavigationSystem.cs)이 관리합니다. 
+게임의 UI는 [UINavigatable](./Assets/Scripts/UI/UINavigatable.cs)를 상속받아 구현하며, UINavigatable가 붙은 UGUI GameObject를 [UINavigationSystem](./Assets/Scripts/System/UINavigationSystem.cs)이 관리합니다. UINavigation에서는 UINavigatable을 등록하고, 해당 UI의 State를 지정할 수 있습니다.<br>
+![UINavigationSystem Inspector](./Images/UINavigationSystemInspector.png)
 
 <a name="cartoon-rendering"></a>
 카툰 랜더링
