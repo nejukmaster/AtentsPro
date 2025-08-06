@@ -7,7 +7,9 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 목차
 ---------------------
-[로그인](#login)
+>1. [로그인](#login)
+>2. [전투](#battle)
+>3. [캐릭터 행동 및 스킬](#character)
 
 기능
 ---------------------
@@ -33,6 +35,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 ![Login Flowchart](./Images/LoginFlowchart.png)
 
+<a name="battle"></a>
 전투
 --------------------
   전투는 플레이어가 선택한 스테이지에 입장하여 플레이어가 설정한 파티를 통해 적을 무찌르고 보상을 받는 과정입니다. 전투는 전투 씬에서 진행되며, 씬에 진입할 때 서버에 현재 스테이지 진입 요청을 하게됩니다. 그러면 서버는 요청의 유효성을 검사하고, 스테이지의 정보를 응답으로 보내주게됩니다. 이 정보를 바탕으로 전투 씬 로드시 스테이지와 적을 생성하여 전투를 진행하고, 스테이지는 각 서브스테이지의 클리어 조건과 스테이지 실패 조건을 검사하기 시작합니다.<br>
@@ -40,6 +43,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 ![Battle Flowchart](./Images/BattleFlowchart.png)
 
+<a name="character"></a>
 #### 캐릭터 행동 및 스킬
   전투에서 캐릭터의 행동은 캐릭터 커맨드를 통해 제어됩니다. 캐릭터 커맨드는 [CharacterCommandBuffer](./Assets/Scripts/Objects/Character/CharacterCommandBuffer.cs)에 정의되어있습니다. 캐릭터 커맨드는 캐릭터의 캐릭터 커맨드 버퍼에 예약되고, 이를 캐릭터가 순차적으로 실행합니다. 캐릭터 커맨드에선 캐릭터의 이동, 애니메이션 재생등을 제어합니다.<br>
   캐릭터마다 스킬은, 캐릭터의 기본공격까지 포함하여 총 4개를 보유하며 [Skill 클래스](./Assets/Scripts/Battle/Skill/Skill.cs)를 상속하여 구현합니다. 사용자가 UI를 통해 캐릭터의 스킬을 사용하면 [BattleSystem](./Assets/Scripts/System/BattleSystem.cs)에 SkillRequest를 예약하며 BattleSystem은 이 SkillRequest를 순차적으로 Cast합니다. Skill이 Cast되면 시전 캐릭터에 SkillAction과 캐릭터 커맨드를 예약하고, 이 캐릭터 커맨드는 해당 스킬의 애니메이션 재생을 포함합니다. 해당 스킬의 애니메이션이 재생되면 Unity의 애니메이션 이벤트 기능을 통해 캐릭터에 예약된 SkillAction을 실행하고, 여기서 효과나 데미지 처리등을 합니다. 이를 도식화하면 다음과 같습니다.
