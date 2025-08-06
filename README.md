@@ -131,6 +131,9 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 > 3. 사용가능한 아이템일 경우 Server/AtentsServer.js에 아이템 사용 요청시 처리될 함수를 추가
 > 4. 해당 함수를 UserItem 메서드 분기에 추가
 
+#### UI
+게임의 UI는 [UINavigationSystem](./Assets/Scripts/System/UINavigationSystem.cs)이 관리합니다.
+
 <a name="cartoon-rendering"></a>
 카툰 랜더링
 --------------------------
