@@ -7,20 +7,20 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 목차
 ---------------------
->1. **[로그인]**(#login)<br>
->2. **[전투]**(#battle)<br>
+>1. [**로그인**](#login)<br>
+>2. [**전투**](#battle)<br>
 >   > [캐릭터 행동 및 스킬](#character)<br>
->3. **[홈]**(#home)<br>
+>3. [**홈**](#home)<br>
 >   > [홈 씬 진입](#home_enter)<br>
 >   > [모집](#home_recruit)<br>
 >   > [아이템 사용](#home_useitem)<br>
 >   > [파티 편성](#home_party)<br>
->4. **[확장성]**(#expantion)<br>
+>4. [**확장성**](#expantion)<br>
 >   > [캐릭터](#expantion_character)<br>
 >   > [스테이지](#expantion_stage)<br>
 >   > [아이템](#expantion_item)<br>
 >   > [UI](#expantion_ui)<br>
->5. **[카툰 랜더링]**(#cartoon-rendering)<br>
+>5. [**카툰 랜더링**](#cartoon-rendering)<br>
 
 기능
 ---------------------
