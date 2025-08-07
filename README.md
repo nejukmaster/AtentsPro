@@ -21,6 +21,10 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 >   > [아이템](#expantion_item)<br>
 >   > [UI](#expantion_ui)<br>
 >5. [**카툰 랜더링**](#cartoon-rendering)<br>
+>   > [래디언스](#radience)<br>
+>   > [노멀 구형화](#normal_spherizing)<br>
+>   > [쉐도우 캐스터 마스크](#shadow_caster_mask)<br>
+>   > [외곽선](#outline)<br>
 
 기능
 ---------------------
@@ -166,6 +170,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 --------------------------
   원하는 게임 분위기를 내기위해 캐릭터에 사용될 카툰 쉐이더를 제작하였습니다. 목표는 일러스트풍의 카툰 쉐이딩 제작이었으며, URP에서 제공하는 기능을 십분 활용하기 위하여 URP의 Universal Lit 쉐이더를 복사하여 PBR 부분을 NPR 스타일로 교체하는 작업을 통해 구현하였습니다.
 
+<a name="radience"></a>
 #### 래디언스
   부드러운 셀 셰이딩을 얻기위하여, 램프 텍스쳐를 샘플링하는것 보다 Threshold값과 Smooth값을 사용하여 래디언스값을 계산하는 편이 비용이 덜 들것으로 판단되어 해당 방법으로 셀 쉐이딩을 구현하였습니다. 다음은 래디언스 값을 계산한 코드입니다.
 ```hlsl
@@ -174,6 +179,7 @@ smoothstep(Threshold - Smooth, Threshold + Smooth, x)
 래디언스는 그림자 뿐만 아니라 프레넬과 스펙큘러에도 적용될 수 있으며, one-step 셀 쉐이딩과 비교하면 아래와 같습니다.<br>
 ![Radience Cel-Shading](./Images/RadienceCelShading.png)
 
+<a name="normal_spherizing></a>
 #### 노멀 구형화
   래디언스를 통해 부드러운 셀 셰이딩을 얻었지만, 아직 그림자가 지저분합니다. 이는 대부분의 일러스트에서, 특히, 캐릭터의 얼굴쪽 명암이 단순하게 표현되는게 원인임을 알 수 있습니다.<br>
 ![CharacterIllustSample](./Images/CharacterIllustSample.png)
@@ -188,6 +194,7 @@ float3 spherizedNormal = lerp(normalWS, centerToSurface, x);
 
 비교 사진에서 좀 더 단순화된 명암을 확인할 수 있습니다.
 
+<a name="shadow_caster_mask></a>
 #### 쉐도우 캐스터 마스크
   얼굴의 코와 같이 다른 부위에 비해 과하게 튀어나온 부분이 있으면, 주변 표면에 그림자를 드리웁니다. 이 현상은 얼굴과 같은 시각적으로 민감한 부위에 나타나게되면 목표로 하는 일러스트 느낌이 크게 저해된다고 생각했으며, 이를 해결하는 방법을 모색했습니다.<br>
 ![ShadingComparision](./Images/ShadingComparision.png)
@@ -199,6 +206,7 @@ float3 spherizedNormal = lerp(normalWS, centerToSurface, x);
 
 ![ShadowCasterMask](./Images/ShadowCasterMask.png)
 
+<a name="outline"></a>
 #### 외곽선
   캐릭터의 외곽선은 URP에서 동작하는 SRP Batcher가 multi-Pass 쉐이더를 지원하지 않기에 외곽선 쉐이더를 따로 제작하여 MeshRenderer에 두 개의 머티리얼을 적용하는 방식으로 구현하였습니다.<br>
 ![Outline](./Images/Outline.png)
