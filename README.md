@@ -138,6 +138,13 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 또한 UINavigationSystem에는 [UINavStatemachine](./Assets/Scripts/UI/UINavStatemachine.cs)을 등록할 수 있습니다. UINavStatemachine는 각 State들의 연결을 설정할 수 있는 ScriptableObject입니다. UINavigationSystem은 등록된 UINavStatemachine을 참조하여 State를 이동하며, 다른 State로 이동할 때 연결되지 않은 State로는 이동할 수 없습니다. State를 이동하게되면 이전 State에 소속된 UINavigatable들의 "StateOff" 메서드를 실행하고, 다음 State에 소속된 UINavigatable들의 "StateOn" 메서드를 실행합니다.<br>
 ![UINavStatemachine Inspector](./Images/UINavStatemachineInspector.png)
 
+#### 새로운 UI 제작 프로세스
+> 1. 씬 뷰에서 UGUI를 통해 UI를 디자인
+> 2. UINavigatable를 상속한 Mono 컴포넌트를 제작
+> 3. 디자인한 UI 최상단 오브젝트에 제작한 컴포넌트를 붙여넣기
+> 4. UINavStatemachine 에셋에 States 요소를 추가 및 연결 설정
+> 5. UINavigationSystem에 UINavigatables 요소를 추가하고 게임 오브젝트와 State를 할당
+
 <a name="cartoon-rendering"></a>
 카툰 랜더링
 --------------------------
