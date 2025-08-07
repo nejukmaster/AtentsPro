@@ -8,10 +8,19 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 목차
 ---------------------
 >1. [로그인](#login)
->2. [전투](#battle)
->3. [홈](#home)
->4. [확장성](#expandation)
->5. [카툰 랜더링](#cartoon-rendering)
+>3. [전투](#battle)
+>   > [캐릭터 행동 및 스킬](#character)
+>5. [홈](#home)
+>   > [홈 씬 진입](#home_enter)
+>   > [모집](#home_recruit)
+>   > [아이템 사용](#home_useitem)
+>   > [파티 편성](#home_party)
+>6. [확장성](#expantion)
+>   > [캐릭터](#expantion_character)
+>   > [스테이지](#expantion_stage)
+>   > [아이템](#expantion_item)
+>   > [UI](#expantion_ui)
+>7. [카툰 랜더링](#cartoon-rendering)
 
 기능
 ---------------------
@@ -57,32 +66,36 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 --------------------
   홈은 계정의 재화, 아이템, 보유 캐릭터를 확인하거나, 현재 파티의 구성을 변경, 새 캐릭터 모집 및 스테이지를 선택하여 전투씬으로 입장하는 것이 가능한 장소입니다.
 
+<a name="home_enter"></a>
 #### 홈 씬 진입
  홈 씬에 진입할 경우, 클라이언트는 서버에 최신의 유저 정보와 글로벌 인포(현재 진행중인 이벤트 등)를 요청하게 됩니다. 먼저 로딩씬을 로드하고 유저 정보 요청을 보내며, 유저 정보가 정상적으로 도착하면 글로벌 인포를 요청합니다. 이때, 향후 OpenAPI등의 확장을 고려하여 따로 유효성 검사를 진행하진 않습니다. 이후 해당 정보들을 GameManager에 업데이트한 후, 홈 씬을 로드하게 됩니다. 이를 도식화 하면 다음과 같습니다.
  
  ![HomeSceneLoadFlowchart](./Images/HomeSceneLoadFlowchart.png)
 
+<a name="home_recruit"></a>
  #### 모집
   홈 씬에서 하단의 메뉴를 통해 모집 UI로 넘어갈 수 있습니다. 현재 진행중인 모집에 Jem을 사용하여 모집을 진행할 수 있으며, 이는 글로벌 인포에 담겨져 있으므로, UI가 로딩될 때 서버로 요청을 보내진 않습니다. 진행중인 모집은 이벤트 코드로 구분하며, 플레이어가 모집을 진행하면 이벤트 코드를 포함하는 모집 요청을 서버로 보내게됩니다. 그러면 서버는 유효성 검사와 함께 유저의 재화를 검사하며, 유저의 젬이 충분할 경우 서버는 DB에서 요청받은 이벤트를 검색하고, 모집 결과를 산출하게 됩니다. 산출된 모집 결과는 모집후 업데이트된 유저 정보와 함께 응답으로써 클라이언트에 보내지게됩니다. 응답을 받은 클라이언트는 유저 정보를 GameManager에 업데이트하고 모집 컷씬을 재생합니다. 이를 도식화하면 다음과 같습니다.
 
 ![RecruitFlowchart](./Images/RecruitFlowchart.png)
 
-
+<a name="home_useitem"></a>
 #### 아이템 사용
   모집과 마찬가지로 하단 메뉴를 통해 가방 UI로 넘어갈 수 있으며, 현재 보유한 아이템을 확인하고, 사용가능한 아이템은 사용할 수 있습니다. 인벤토리 정보는 유저 정보에 담겨져 있기 때문에 UI 진입시 서버에 요청을 보내지는 않습니다. 사용가능한 아이템을 확인하게 되면 아이템 확인 UI에 "사용" 버튼이 활성화되고, 이를 클릭시 아이템 사용 요청을 보내게됩니다. 서버는 유효성 검사후 아이템 사용 처리를 하고, 결과 메세지와 업데이트된 유저 정보를 응답으로 반환합니다. 이를 받은 클라이언트는 UI에 결과 메세지를 띄우고, GameManager에 유저 정보를 업데이트합니다. 이를 도식화하면 다음과 같습니다.
 
 ![UseItemFlowchart](./Images/UseItemFlowchart.png)
 
+<a name="home_party"></a>
 #### 파티 편성
   모집, 가방과 마찬가지로 하단 메뉴를 통해 캐릭터 UI로 넘어갈 수 있으며, 여기서 좌측 버튼을 통해 파티 편성 UI로 넘어갈 수 있습니다. 파티는 최대 네명의 캐릭터로 구성될수 있습니다. 파티 편성 UI의 각 자리 버튼을 클릭하면 캐릭터 선택 UI가 활성화 되며, 배치할 캐릭터를 클릭하면 서버로 파티 편성 요청을 보내게 됩니다. 이 요청에는 변경된 자리의 인덱스와 변경한 캐릭터 정보를 담고 있으며, 서버는 이를 받아서 유효성 검사후 유저 정보를 업데이트합니다. 이후, 업데이트된 유저 정보를 응답으로 보내며, 클라이언트는 이를 받아 유저 정보를 업데이트하고 파티 편성 UI를 갱신합니다. 이를 도식화 하면 다음과 같습니다.
 
 ![CharacterLineupFlowchart](./Images/CharacterLineupFlowchart.png)
 
-<a name="expandation"></a>
+<a name="expantion"></a>
 확장성
 --------------------
   온라인 서비스를 상정한 게임이므로 향후 확장성을 고려하여 시스템을 디자인했습니다. 게임내 확장 가능한 모든 컨텐츠가 일정한 프로세스에 맞춰 추가될 수 있도록 하는 것이 최우선시한 목표이며, 또한, 그 과정에서 코드를 쓰는 과정을 최대한 적게 하는것이 두번째 목표였습니다.
-  
+
+<a name="expantion_character"></a>
 #### 캐릭터
 캐릭터는 스테이지에 등장하여 전투를 하는 아군/적군을 총칭하며 [Character 클래스](./Assets/Scripts/Objects/Character/Character.cs)를 통해 구현합니다.
 
@@ -106,6 +119,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 > 8. 스킬의 아이콘을 제작하고 아틀라스로 묶는다.<br>
 > 9. 해당 캐릭터의 초상화와 전신 일러스트를 제작한다.<br>
 
+<a name="expantion_stage"></a>
 #### 스테이지
 스테이지는 [Stage 클래스](./Assets/Scripts/Battle/Stage/Stage.cs)를 상속하여 구현합니다.  [StageTable](./Assets/Resources/DataSheet/StageTable.csv)에 각 스테이지에 대한 정보를 저장하고있습니다. [StageEditor 클래스](./Assets/Scripts/Editor/Battle/StageEditor.cs)를 제작하여 스테이지 제작시에 GUI를 사용하여 보다 빠르고 효율적으로 제작할 수 있도록 하였습니다.
 
@@ -122,6 +136,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 > 8. Resources/DataSheet에 해당 스테이지의 정보를 추가<br>
 > 9. Resources/Texture/Illustration/StagePreveiw에 Stage의 프리뷰 이미지를 제작해서 저장<br>
 
+<a name="expantion_item"></a>
 #### 아이템
 아이템은 캐릭터가 가방 UI에서 확인하거나 사용할 수 있는 요소입니다. 아이템의 정보는 [ItemTable](./Assets/Resources/DataSheet/ItemTable.csv)에 저장되어있으며, 아이디, 이름, 설명, 사용가능 여부로 구성됩니다
 
@@ -131,6 +146,7 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 > 3. 사용가능한 아이템일 경우 Server/AtentsServer.js에 아이템 사용 요청시 처리될 함수를 추가
 > 4. 해당 함수를 UserItem 메서드 분기에 추가
 
+<a name="expantion_ui"></a>
 #### UI
 게임의 UI는 [UINavigatable](./Assets/Scripts/UI/UINavigatable.cs)를 상속받아 구현하며, UINavigatable가 붙은 UGUI GameObject를 [UINavigationSystem](./Assets/Scripts/System/UINavigationSystem.cs)이 관리합니다. UINavigation에서는 UINavigatable을 등록하고, 해당 UI의 State를 지정할 수 있습니다.<br>
 ![UINavigationSystem Inspector](./Images/UINavigationSystemInspector.png)
