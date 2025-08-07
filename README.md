@@ -7,20 +7,20 @@ https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=shari
 
 목차
 ---------------------
->1. [로그인](#login)
->3. [전투](#battle)
->   > [캐릭터 행동 및 스킬](#character)
->5. [홈](#home)
->   > [홈 씬 진입](#home_enter)
->   > [모집](#home_recruit)
->   > [아이템 사용](#home_useitem)
->   > [파티 편성](#home_party)
->6. [확장성](#expantion)
->   > [캐릭터](#expantion_character)
->   > [스테이지](#expantion_stage)
->   > [아이템](#expantion_item)
->   > [UI](#expantion_ui)
->7. [카툰 랜더링](#cartoon-rendering)
+>1. [로그인](#login)<br>
+>3. [전투](#battle)<br>
+>   > [캐릭터 행동 및 스킬](#character)<br>
+>5. [홈](#home)<br>
+>   > [홈 씬 진입](#home_enter)<br>
+>   > [모집](#home_recruit)<br>
+>   > [아이템 사용](#home_useitem)<br>
+>   > [파티 편성](#home_party)<br>
+>6. [확장성](#expantion)<br>
+>   > [캐릭터](#expantion_character)<br>
+>   > [스테이지](#expantion_stage)<br>
+>   > [아이템](#expantion_item)<br>
+>   > [UI](#expantion_ui)<br>
+>7. [카툰 랜더링](#cartoon-rendering)<br>
 
 기능
 ---------------------
