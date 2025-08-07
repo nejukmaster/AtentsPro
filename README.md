@@ -179,7 +179,7 @@ smoothstep(Threshold - Smooth, Threshold + Smooth, x)
 래디언스는 그림자 뿐만 아니라 프레넬과 스펙큘러에도 적용될 수 있으며, one-step 셀 쉐이딩과 비교하면 아래와 같습니다.<br>
 ![Radience Cel-Shading](./Images/RadienceCelShading.png)
 
-<a name="normal_spherizing></a>
+<a name="normal_spherizing"></a>
 #### 노멀 구형화
   래디언스를 통해 부드러운 셀 셰이딩을 얻었지만, 아직 그림자가 지저분합니다. 이는 대부분의 일러스트에서, 특히, 캐릭터의 얼굴쪽 명암이 단순하게 표현되는게 원인임을 알 수 있습니다.<br>
 ![CharacterIllustSample](./Images/CharacterIllustSample.png)
@@ -194,7 +194,7 @@ float3 spherizedNormal = lerp(normalWS, centerToSurface, x);
 
 비교 사진에서 좀 더 단순화된 명암을 확인할 수 있습니다.
 
-<a name="shadow_caster_mask></a>
+<a name="shadow_caster_mask"></a>
 #### 쉐도우 캐스터 마스크
   얼굴의 코와 같이 다른 부위에 비해 과하게 튀어나온 부분이 있으면, 주변 표면에 그림자를 드리웁니다. 이 현상은 얼굴과 같은 시각적으로 민감한 부위에 나타나게되면 목표로 하는 일러스트 느낌이 크게 저해된다고 생각했으며, 이를 해결하는 방법을 모색했습니다.<br>
 ![ShadingComparision](./Images/ShadingComparision.png)
