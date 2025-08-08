@@ -5,6 +5,7 @@
 **작동 영상**
 https://youtu.be/hgPTH_ZUPj8
 
+<a name="list"></a>
 목차
 ---------------------
 >1. [**로그인**](#login)<br>
@@ -50,6 +51,8 @@ https://youtu.be/hgPTH_ZUPj8
 
 ![Login Flowchart](./Images/LoginFlowchart.png)
 
+[###### 목차로](#list)
+
 <a name="battle"></a>
 전투
 --------------------
@@ -58,12 +61,16 @@ https://youtu.be/hgPTH_ZUPj8
 
 ![Battle Flowchart](./Images/BattleFlowchart.png)
 
+[###### 목차로](#list)
+
 <a name="character"></a>
 #### 캐릭터 행동 및 스킬
   전투에서 캐릭터의 행동은 캐릭터 커맨드를 통해 제어됩니다. 캐릭터 커맨드는 [CharacterCommandBuffer](./Assets/Scripts/Objects/Character/CharacterCommandBuffer.cs)에 정의되어있습니다. 캐릭터 커맨드는 캐릭터의 캐릭터 커맨드 버퍼에 예약되고, 이를 캐릭터가 순차적으로 실행합니다. 캐릭터 커맨드에선 캐릭터의 이동, 애니메이션 재생등을 제어합니다.<br>
   캐릭터마다 스킬은, 캐릭터의 기본공격까지 포함하여 총 4개를 보유하며 [Skill 클래스](./Assets/Scripts/Battle/Skill/Skill.cs)를 상속하여 구현합니다. Skill 클래스는 Cast라는 가상 메서드를 가지고 있으며, 이 Cast 메서드에 해당 스킬의 동작을 구현합니다. 사용자가 UI를 통해 캐릭터의 스킬을 사용하면 [BattleSystem](./Assets/Scripts/System/BattleSystem.cs)에 SkillRequest를 예약하며 BattleSystem은 이 SkillRequest를 순차적으로 Cast합니다. Skill이 Cast되면 시전 캐릭터에 SkillAction과 캐릭터 커맨드를 예약하고, 이 캐릭터 커맨드는 해당 스킬의 애니메이션 재생을 포함합니다. 해당 스킬의 애니메이션이 재생되면 Unity의 애니메이션 이벤트 기능을 통해 캐릭터에 예약된 SkillAction을 실행하고, 여기서 효과나 데미지 처리등을 합니다. 이를 도식화하면 다음과 같습니다.
 
 ![CharacterCommand Flowchart](./Images/CharacterCommandFlowchart.png)
+
+[###### 목차로](#list)
 
 <a name="home"></a>
 홈
@@ -94,6 +101,8 @@ https://youtu.be/hgPTH_ZUPj8
 
 ![CharacterLineupFlowchart](./Images/CharacterLineupFlowchart.png)
 
+[###### 목차로](#list)
+
 <a name="expantion"></a>
 확장성
 --------------------
@@ -123,6 +132,8 @@ https://youtu.be/hgPTH_ZUPj8
 > 8. 스킬의 아이콘을 제작하고 아틀라스로 묶음<br>
 > 9. 해당 캐릭터의 초상화와 전신 일러스트를 제작<br>
 
+[###### 목차로](#list)
+
 <a name="expantion_stage"></a>
 #### 스테이지
 스테이지는 [Stage 클래스](./Assets/Scripts/Battle/Stage/Stage.cs)를 상속하여 구현합니다.  [StageTable](./Assets/Resources/DataSheet/StageTable.csv)에 각 스테이지에 대한 정보를 저장하고있습니다. [StageEditor 클래스](./Assets/Scripts/Editor/Battle/StageEditor.cs)를 제작하여 스테이지 제작시에 GUI를 사용하여 보다 빠르고 효율적으로 제작할 수 있도록 하였습니다.
@@ -140,15 +151,19 @@ https://youtu.be/hgPTH_ZUPj8
 > 8. Resources/DataSheet에 해당 스테이지의 정보를 추가<br>
 > 9. Resources/Texture/Illustration/StagePreveiw에 Stage의 프리뷰 이미지를 제작해서 저장<br>
 
+[###### 목차로](#list)
+
 <a name="expantion_item"></a>
 #### 아이템
 아이템은 캐릭터가 가방 UI에서 확인하거나 사용할 수 있는 요소입니다. 아이템의 정보는 [ItemTable](./Assets/Resources/DataSheet/ItemTable.csv)에 저장되어있으며, 아이디, 이름, 설명, 사용가능 여부로 구성됩니다
 
 #### 새로운 아이템 제작 프로세스
-> 1. Resources/DataSheet/ItemTable.csv에 아이템 정보 추가
-> 2. Resources/Texture/ItemIcon에 아이템 아이콘 텍스쳐를 제작하여 추가
-> 3. 사용가능한 아이템일 경우 Server/AtentsServer.js에 아이템 사용 요청시 처리될 함수를 추가
-> 4. 해당 함수를 UserItem 메서드 분기에 추가
+> 1. Resources/DataSheet/ItemTable.csv에 아이템 정보 추가<br>
+> 2. Resources/Texture/ItemIcon에 아이템 아이콘 텍스쳐를 제작하여 추가<br>
+> 3. 사용가능한 아이템일 경우 Server/AtentsServer.js에 아이템 사용 요청시 처리될 함수를 추가<br>
+> 4. 해당 함수를 UserItem 메서드 분기에 추가<br>
+
+[###### 목차로](#list)
 
 <a name="expantion_ui"></a>
 #### UI
@@ -165,6 +180,8 @@ https://youtu.be/hgPTH_ZUPj8
 > 4. UINavStatemachine 에셋에 States 요소를 추가 및 연결 설정
 > 5. UINavigationSystem에 UINavigatables 요소를 추가하고 게임 오브젝트와 State를 할당
 
+[###### 목차로](#list)
+
 <a name="cartoon-rendering"></a>
 카툰 랜더링
 --------------------------
@@ -178,6 +195,8 @@ smoothstep(Threshold - Smooth, Threshold + Smooth, x)
 ```
 래디언스는 그림자 뿐만 아니라 프레넬과 스펙큘러에도 적용될 수 있으며, one-step 셀 쉐이딩과 비교하면 아래와 같습니다.<br>
 ![Radience Cel-Shading](./Images/RadienceCelShading.png)
+
+[###### 목차로](#list)
 
 <a name="normal_spherizing"></a>
 #### 노멀 구형화
@@ -194,6 +213,8 @@ float3 spherizedNormal = lerp(normalWS, centerToSurface, x);
 
 비교 사진에서 좀 더 단순화된 명암을 확인할 수 있습니다.
 
+[###### 목차로](#list)
+
 <a name="shadow_caster_mask"></a>
 #### 쉐도우 캐스터 마스크
   얼굴의 코와 같이 다른 부위에 비해 과하게 튀어나온 부분이 있으면, 주변 표면에 그림자를 드리웁니다. 이 현상은 얼굴과 같은 시각적으로 민감한 부위에 나타나게되면 목표로 하는 일러스트 느낌이 크게 저해된다고 생각했으며, 이를 해결하는 방법을 모색했습니다.<br>
@@ -206,7 +227,11 @@ float3 spherizedNormal = lerp(normalWS, centerToSurface, x);
 
 ![ShadowCasterMask](./Images/ShadowCasterMask.png)
 
+[###### 목차로](#list)
+
 <a name="outline"></a>
 #### 외곽선
   캐릭터의 외곽선은 URP에서 동작하는 SRP Batcher가 multi-Pass 쉐이더를 지원하지 않기에 외곽선 쉐이더를 따로 제작하여 MeshRenderer에 두 개의 머티리얼을 적용하는 방식으로 구현하였습니다.<br>
 ![Outline](./Images/Outline.png)
+
+[###### 목차로](#list)
