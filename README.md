@@ -3,7 +3,7 @@
 **블루 아카이브**나 **붕괴:스타레일**과 같은 턴제 전투 방식을 차용한 3D 수집형 RPG 포트폴리오입니다.
 
 **작동 영상**
-https://drive.google.com/file/d/1NDoOAa8mQ1nVqf0_cqEylDw2j1dW9sIC/view?usp=sharing
+https://youtu.be/hgPTH_ZUPj8
 
 목차
 ---------------------
