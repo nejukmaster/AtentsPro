@@ -51,7 +51,7 @@ https://youtu.be/hgPTH_ZUPj8
 
 ![Login Flowchart](./Images/LoginFlowchart.png)
 
-[###### 목차로](#list)
+[목차로](#list)
 
 <a name="battle"></a>
 전투
@@ -61,7 +61,7 @@ https://youtu.be/hgPTH_ZUPj8
 
 ![Battle Flowchart](./Images/BattleFlowchart.png)
 
-[###### 목차로](#list)
+[목차로](#list)
 
 <a name="character"></a>
 #### 캐릭터 행동 및 스킬
@@ -70,7 +70,7 @@ https://youtu.be/hgPTH_ZUPj8
 
 ![CharacterCommand Flowchart](./Images/CharacterCommandFlowchart.png)
 
-######[목차로](#list)
+[목차로](#list)
 
 <a name="home"></a>
 홈
@@ -101,7 +101,7 @@ https://youtu.be/hgPTH_ZUPj8
 
 ![CharacterLineupFlowchart](./Images/CharacterLineupFlowchart.png)
 
-[###### 목차로](#list)
+[목차로](#list)
 
 <a name="expantion"></a>
 확장성
@@ -132,7 +132,7 @@ https://youtu.be/hgPTH_ZUPj8
 > 8. 스킬의 아이콘을 제작하고 아틀라스로 묶음<br>
 > 9. 해당 캐릭터의 초상화와 전신 일러스트를 제작<br>
 
-[###### 목차로](#list)
+[목차로](#list)
 
 <a name="expantion_stage"></a>
 #### 스테이지
@@ -151,7 +151,7 @@ https://youtu.be/hgPTH_ZUPj8
 > 8. Resources/DataSheet에 해당 스테이지의 정보를 추가<br>
 > 9. Resources/Texture/Illustration/StagePreveiw에 Stage의 프리뷰 이미지를 제작해서 저장<br>
 
-[###### 목차로](#list)
+[목차로](#list)
 
 <a name="expantion_item"></a>
 #### 아이템
@@ -163,7 +163,7 @@ https://youtu.be/hgPTH_ZUPj8
 > 3. 사용가능한 아이템일 경우 Server/AtentsServer.js에 아이템 사용 요청시 처리될 함수를 추가<br>
 > 4. 해당 함수를 UserItem 메서드 분기에 추가<br>
 
-[###### 목차로](#list)
+[목차로](#list)
 
 <a name="expantion_ui"></a>
 #### UI
@@ -180,7 +180,7 @@ https://youtu.be/hgPTH_ZUPj8
 > 4. UINavStatemachine 에셋에 States 요소를 추가 및 연결 설정
 > 5. UINavigationSystem에 UINavigatables 요소를 추가하고 게임 오브젝트와 State를 할당
 
-[###### 목차로](#list)
+[목차로](#list)
 
 <a name="cartoon-rendering"></a>
 카툰 랜더링
@@ -196,7 +196,7 @@ smoothstep(Threshold - Smooth, Threshold + Smooth, x)
 래디언스는 그림자 뿐만 아니라 프레넬과 스펙큘러에도 적용될 수 있으며, one-step 셀 쉐이딩과 비교하면 아래와 같습니다.<br>
 ![Radience Cel-Shading](./Images/RadienceCelShading.png)
 
-[###### 목차로](#list)
+[목차로](#list)
 
 <a name="normal_spherizing"></a>
 #### 노멀 구형화
@@ -213,7 +213,7 @@ float3 spherizedNormal = lerp(normalWS, centerToSurface, x);
 
 비교 사진에서 좀 더 단순화된 명암을 확인할 수 있습니다.
 
-[###### 목차로](#list)
+[목차로](#list)
 
 <a name="shadow_caster_mask"></a>
 #### 쉐도우 캐스터 마스크
@@ -227,11 +227,11 @@ float3 spherizedNormal = lerp(normalWS, centerToSurface, x);
 
 ![ShadowCasterMask](./Images/ShadowCasterMask.png)
 
-[###### 목차로](#list)
+[목차로](#list)
 
 <a name="outline"></a>
 #### 외곽선
   캐릭터의 외곽선은 URP에서 동작하는 SRP Batcher가 multi-Pass 쉐이더를 지원하지 않기에 외곽선 쉐이더를 따로 제작하여 MeshRenderer에 두 개의 머티리얼을 적용하는 방식으로 구현하였습니다.<br>
 ![Outline](./Images/Outline.png)
 
-[###### 목차로](#list)
+[목차로](#list)
