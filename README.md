@@ -196,7 +196,7 @@ https://youtu.be/lYCqgcV833Y
 ```hlsl
 smoothstep(Threshold - Smooth, Threshold + Smooth, x)
 ```
-래디언스는 그림자 뿐만 아니라 프레넬과 스펙큘러에도 적용될 수 있으며, one-step 셀 쉐이딩과 비교하면 아래와 같습니다.<br>
+래디언스는 그림자 뿐만 아니라 프레넬과 스펙큘러, GI에도 적용될 수 있으며, one-step 셀 쉐이딩과 비교하면 아래와 같습니다.<br>
 ![Radience Cel-Shading](./Images/RadienceCelShading.png)
 
 [목차로](#list)
