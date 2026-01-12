@@ -16,8 +16,6 @@ https://youtu.be/hgPTH_ZUPj8
 >   > [모집](#home_recruit)<br>
 >   > [아이템 사용](#home_useitem)<br>
 >   > [파티 편성](#home_party)<br>
->4. [**서버**]<br>
->   >
 >4. [**확장성**](#expantion)<br>
 >   > [캐릭터](#expantion_character)<br>
 >   > [스테이지](#expantion_stage)<br>
