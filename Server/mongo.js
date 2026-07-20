@@ -1,7 +1,7 @@
 const MongoClient = require("mongodb").MongoClient;
 
-const mongodb_usrname = 'admin';
-const mongodb_pw = 'atentspro_backend';
+const mongodb_usrname = '@@@@@@@';
+const mongodb_pw = '@@@@@@@';
 
 const mongodb_uri = 'mongodb+srv://'+mongodb_usrname+':'+mongodb_pw+'@cluster0.gxughgs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
